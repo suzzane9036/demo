@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0102祝您「贪吃不怕 蛇年大吉」</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;  /* 防止页面滚动 */
+      position: fixed;   /* 固定页面位置 */
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+    }
+    canvas {
+      border: 20px solid rgb(255, 255, 255);
+      display: block;
+    }
+    .controls {
+      position: absolute;
+      bottom: 20px;  /* 从底部开始定位 */
+      left: 50%;     /* 水平居中 */
+      transform: translateX(-50%);  /* 确保完全居中 */
+      display: flex;
+      flex-direction: row;  /* 改为水平排列 */
+      gap: 20px;
+    }
+    button {
+      width: 40px;
+      height: 40px;
+      background: #E7231E;
+      color: white;
+      border: none;
+      border-radius: 0px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-tap-highlight-color: transparent;  /* 移除默认的触摸高亮 */
+      user-select: none;  /* 防止文字被选中 */
+      touch-action: manipulation;  /* 优化触摸操作 */
+    }
+    button:active {
+      background: #B22234;  /* 按下时的颜色 */
+    }
+    button img {
+      width: 20px;
+      height: 20px;
+    }
+    .row-text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+  
+      font-family: Swei Alias Sans CJK SC, sans-serif;
+    }
+    #textRow1 {
+      top: calc(50% - 223px); /* 第二排 */
+      font-size: 28px;
+     
+    }
+    #textRow2 {
+      bottom: calc(50% - 227px); /* 倒数第二排 */
+      font-size: 40px;
+    
+    }
+    #resetButton {
+      font-size: 20px;
+      transform: scaleX(-1);  /* 让箭头朝逆时针方向 */
+    }
+    #saveButton {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <button id="startButton">▶</button>
+    <button id="pauseButton">❚❚</button>
+    <button id="resetButton">↺</button>
+    <button id="saveButton">💾</button>
+  </div>
+
+  <div id="textRow1" class="row-text">0102 DESIGN</div>
+    <div id="textRow2" class="row-text">HAPPY CHINESE NEW YEAR</div>
+
+  <canvas id="gridCanvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
